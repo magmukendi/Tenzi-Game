@@ -2,37 +2,363 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  padding: 0px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  font-family: "Poppins" sans-serif;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.warning {
+  margin: auto;
+  position: absolute;
+  top: 500px;
+  left: 50px;
+  text-align: center;
+  visibility: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.oss {
+  margin: 0px;
+  padding: 0px;
+}
+/*NAV STYLE*/
+.nav-bar {
+  margin: 0px;
+  padding: 0px;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(35, 66, 153);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+.nav-bar img {
+  width: 60px;
+  padding-right: 10px;
+}
+.nav-bar > div {
+  display: flex;
+}
+
+.nav-container {
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: rgb(50, 80, 200);
+}
+
+.nav-container p {
+  text-align: center;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.nav-logo {
+  width: 60px;
+  height: max-content;
+}
+.nav-items > li {
+  padding: 10px;
+}
+
+/*HERO STYLE*/
+.hero {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.g-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.g-element {
+  margin: 0px 20px 100px 20px;
+  background: rgb(200, 200, 50);
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.g-element p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*@media (min-width: 350px) and (max-width: 500px) {
+  .bg {
+    opacity: 0;
+  }
+  .nav-container {
+    background-color: red;
+  }
+  .warning {
+    visibility: visible;
+  }
+}*/
+.bg {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*TRAVEL CARD*/
+
+.travel-container {
+  width: 80vw;
+  padding: 0px 25px 0px 25px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.travel-container img {
+  object-fit: cover;
+  width: 150px;
+  border-radius: 8px;
+}
+.details {
+  padding-left: 20px;
+}
+.google {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* MEME GENERATOR */
+
+.meme-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.meme-form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.meme-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.meme-button {
+  grid-column: 1 / -1;
+  background-color: rgb(35, 66, 153);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.meme-button,
+input {
+  border-radius: 5px;
+  border: 1px solid #d5d4d8;
+}
+input {
+  text-indent: 10px;
+}
+/* JOKE */
+
+.joke-container {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* messages */
+
+.bg span {
+  color: blue;
+}
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: fit-content;
+  margin-top: 2rem;
+  width: fit-content;
+}
+.meme-img {
+  max-width: 80%;
+  border-radius: 3px;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
+}
+
+.space {
+  width: 200px;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.8rem;
+}
+
+.download {
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 0rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(35, 66, 153);
+  width: 200px;
+  border-radius: 5px;
+}
+
+/*MEMORY*/
+.dog-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+}
+.dog-pic {
+  width: 100px;
+  aspect-ratio: 16/16;
+  margin: 10px;
+  wrap: flex-wrap;
+  border: 5px solid black;
+}
+.dog-pic:hover {
+}
+
+/* TENZI */
+
+main {
+  background-color: rgb(1, 8, 27);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+.dice-container {
+  background: white;
+  width: 80%;
+  border-radius: 10px;
+  padding: 30px 10px;
+  margin: 10px;
+  display: flex;
+  height:max-content;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: black;
+}
+
+.die-face {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.die-number {
+  padding: 10px;
+}
+
+.roll {
+  background: rgb(50, 100, 200);
+
+  font-size: 18px;
+  font-weight: 700px;
+  border: 0.5px solid rgb(1, 1, 1);
+  padding: 7px 10px;
+  width: 200px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.roll:hover {
+  background: rgb(54, 114, 235);
+}
+
+.roll:active {
+  background: rgb(79, 131, 235);
+}
+.timer {
+  color: rgb(255, 255, 100);
+}
+
+.timer-container {
+  height: 100px;
+  width: 100px;
+}
+.hallOfFame{
+  display:flex;
+  flex: row;
+  margin:auto;
 }
