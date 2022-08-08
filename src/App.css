@@ -222,11 +222,9 @@ body {
   width: 100px;
   aspect-ratio: 16/16;
   margin: 10px;
-  wrap: flex-wrap;
   border: 5px solid black;
 }
-.dog-pic:hover {
-}
+
 
 /* TENZI */
 
