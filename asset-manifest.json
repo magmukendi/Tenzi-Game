@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/Tenzi-Game/static/css/main.2a39d2e6.css",
-    "main.js": "/Tenzi-Game/static/js/main.38e8e0b3.js",
+    "main.css": "/Tenzi-Game/static/css/main.3d895e72.css",
+    "main.js": "/Tenzi-Game/static/js/main.f5f8bf76.js",
+    "static/js/845.5d278f3e.chunk.js": "/Tenzi-Game/static/js/845.5d278f3e.chunk.js",
     "static/js/787.7e2466ed.chunk.js": "/Tenzi-Game/static/js/787.7e2466ed.chunk.js",
+    "static/media/suspense.mp3": "/Tenzi-Game/static/media/suspense.2ed5645e30e44464feb8.mp3",
+    "static/media/weDidIt.mp3": "/Tenzi-Game/static/media/weDidIt.88a6ebaa4017db4e7da4.mp3",
     "static/media/logo.svg": "/Tenzi-Game/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Tenzi-Game/index.html",
-    "main.2a39d2e6.css.map": "/Tenzi-Game/static/css/main.2a39d2e6.css.map",
-    "main.38e8e0b3.js.map": "/Tenzi-Game/static/js/main.38e8e0b3.js.map",
+    "main.3d895e72.css.map": "/Tenzi-Game/static/css/main.3d895e72.css.map",
+    "main.f5f8bf76.js.map": "/Tenzi-Game/static/js/main.f5f8bf76.js.map",
+    "845.5d278f3e.chunk.js.map": "/Tenzi-Game/static/js/845.5d278f3e.chunk.js.map",
     "787.7e2466ed.chunk.js.map": "/Tenzi-Game/static/js/787.7e2466ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a39d2e6.css",
-    "static/js/main.38e8e0b3.js"
+    "static/css/main.3d895e72.css",
+    "static/js/main.f5f8bf76.js"
   ]
 }
