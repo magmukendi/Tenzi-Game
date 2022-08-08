@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  background-color: rgb(1, 8, 27);
+  min-height: max-content;
 }
 
+body{
+  background-color: rgb(1, 8, 27);
+
+}
 #root {
   margin: 0px;
   padding: 0px;
@@ -9,6 +15,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
+  
 }
 body {
   padding: 0px;
@@ -18,8 +25,9 @@ body {
   text-align: center;
   margin: 0px;
   padding: 0px;
-  width: 100%;
+  width:100%;
 }
+
 .warning {
   margin: auto;
   position: absolute;
@@ -160,44 +168,6 @@ body {
   font-weight: 500;
 }
 
-/* MEME GENERATOR */
-
-.meme-container {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.meme-form {
-  display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin: auto;
-}
-.meme-input {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.meme-button {
-  grid-column: 1 / -1;
-  background-color: rgb(35, 66, 153);
-  color: white;
-}
-
-.meme-button,
-input {
-  border-radius: 5px;
-  border: 1px solid #d5d4d8;
-}
-input {
-  text-indent: 10px;
-}
-/* JOKE */
-
-.joke-container {
-}
 
 /* messages */
 
@@ -214,35 +184,8 @@ input {
   margin-top: 2rem;
   width: fit-content;
 }
-.meme-img {
-  max-width: 80%;
-  border-radius: 3px;
-}
 
-.meme--text {
-  position: absolute;
-  width: 80%;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 15px 0;
-  padding: 0 5px;
-  font-family: impact, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
-    2px 2px 5px #000;
-}
 
-.top {
-  top: 0;
-}
-.bottom {
-  bottom: 0;
-}
 
 .space {
   width: 200px;
@@ -288,9 +231,8 @@ input {
 /* TENZI */
 
 main {
-  background-color: rgb(1, 8, 27);
+  
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,19 +242,20 @@ main {
 }
 .dice-container {
   background: white;
-  width: 80%;
+  width: 350px;
   border-radius: 10px;
   padding: 30px 10px;
   margin: 10px;
   display: flex;
-  height:max-content;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   color: black;
 }
-
+.titless{
+  width:350px;
+}
 .die-face {
   width: 50px;
   height: 50px;
@@ -332,11 +275,11 @@ main {
 
 .roll {
   background: rgb(50, 100, 200);
-
+  margin-top: 20px;
   font-size: 18px;
   font-weight: 700px;
   border: 0.5px solid rgb(1, 1, 1);
-  padding: 7px 10px;
+  padding: 15px 10px;
   width: 200px;
   color: white;
   border-radius: 5px;
@@ -353,12 +296,34 @@ main {
   color: rgb(255, 255, 100);
 }
 
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}
 .timer-container {
   height: 100px;
   width: 100px;
 }
 .hallOfFame{
   display:flex;
+  background-color: green;
   flex: row;
   margin:auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.conf-container{
+  width: 350px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.conff{
+  width: 350px;
+  margin: auto;
 }

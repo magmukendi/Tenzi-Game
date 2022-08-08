@@ -19,13 +19,11 @@ function Tenzi() {
   const [dice, setDice] = useState(createRandNumber());
   const [tenzies, setTenzies] = useState(false);
   const [timer, setTimer] = useState(0);
-  const [timeDisplay, setTimeDisplay] = useState(true);
   const [bestTime, setBestTime] = useState(JSON.parse(localStorage.getItem("bestTime")) || []);
   const [totalRoll, setTotalRoll] = useState(
     JSON.parse(localStorage.getItem("numberOfRolls")) || []
   );
   const [roll, setRoll] = useState(0)
-
   useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
     const firstValue = dice[0].value;
@@ -111,15 +109,15 @@ function Tenzi() {
     <li>{t} {t>0?"rolls":roll}</li>
   ))
   return (
-    <main>
-      {tenzies && <Confetti />}
+    <main className="game">
+      {tenzies && <div className="conf-container"><Confetti className="conff"/></div>}
       <div className="timer-container">
-        {timeDisplay && <h1 className="timer">{timer}</h1>}
+        <h1 className="timer">{timer}</h1>
       </div>
       {tenzies ? (
         <h1>Congratulations</h1>
       ) : (
-        <div>
+        <div className="titless">
           <h1>Tenzies</h1>
           <p>
             Roll until all dice are the same. Click each die to freeze it at its
@@ -131,7 +129,7 @@ function Tenzi() {
       <button onClick={tenzies ? newGame : rollDice} className="roll">
         {tenzies ? "New Game" : "Roll Dice!"}
       </button>
-      <div className="hallOfFame">
+      {/*<div className="hallOfFame">
         <ol>
         <h3>The best Time</h3>
         {bestTimes}
@@ -140,7 +138,7 @@ function Tenzi() {
         <h3>The Roll</h3>
         {bestRolls}
       </ol>
-        </div>
+      </div> */}
     </main>
 
   );
