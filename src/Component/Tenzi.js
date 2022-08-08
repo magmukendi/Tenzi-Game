@@ -19,28 +19,29 @@ function Dice(props) {
 }
 function Tenzi() {
   
-  const [sus, {stop, pause}] = useSound(suspense, {volume: 0.09})
   const [music, setMusic] = useState(false)
-  const [winner] = useSound(suspense, {volume: 0.5})
+  const [winner, {stop}] = useSound(win, {volume: 0.2})
   const [dice, setDice] = useState(createRandNumber());
-  const [tenzies, setTenzies] = useState(false);
+  const [tenzies, setTenzies] = useState("DidNotStart");
+  const [visible, setVisible] = useState(0.5)
   const [timer, setTimer] = useState(0);
   const [bestTime, setBestTime] = useState(JSON.parse(localStorage.getItem("bestTime")) || []);
   const [totalRoll, setTotalRoll] = useState(
     JSON.parse(localStorage.getItem("numberOfRolls")) || []
-  );
-  const [roll, setRoll] = useState(0)
-  useEffect(() => {
+    );
+    const [roll, setRoll] = useState(0)
+    useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
     const firstValue = dice[0].value;
     const allSameValue = dice.every((die) => die.value === firstValue);
     if (allHeld && allSameValue) {
-      setTenzies(true);
+      setTenzies("win");
+      setTimer(0)
       console.log("You won!");
     }
   }, [dice]);
-
-
+  
+  
   ///Generate new die
   function generateNewDie() {
     return {
@@ -53,23 +54,34 @@ function Tenzi() {
     localStorage.setItem("bestTime", JSON.stringify(bestTime));
     localStorage.setItem("numberOfRolls", JSON.stringify(totalRoll))
   }, [totalRoll,bestTime]);
+  
+  
+  useEffect(()=>{
 
-
+  },[visible])
+  
   useEffect(() => {
     setTimeout(function () {
       setTimer((prev) => {
-       return tenzies ? Number(prev) : Number(prev) + 1
-    });
+        return (tenzies !== "DidNotStart" && timer >= 1) ? Number(prev) -1 : Number(prev)
+      });
+      if(tenzies ==="onGoing" && timer === 0 ){
+        setTenzies("lost")
+      } 
+      
     }, 1000);
   }, [timer,]);
+  
+    useEffect(()=>{
+      tenzies==="win"
+      ? winner()
+      : stop()
 
-
-
- 
-
+    },[tenzies])
+  
   function createRandNumber() {
     const newArr = [];
-
+    
     for (let i = 0; i < 10; i++) {
       newArr.push(generateNewDie());
     }
@@ -77,28 +89,28 @@ function Tenzi() {
   }
   function rollDice() {
     setDice((oldDice) =>
-      oldDice.map((die) => {
-        return die.isHeld ? die : generateNewDie();
-      })
+    oldDice.map((die) => {
+      return die.isHeld ? die : generateNewDie();
+    })
     );
     setRoll(prevRoll => Number(prevRoll) + 1)
   }
   function newGame() {
-    tenzies && setBestTime((prev) => [...prev, Number(timer)]);
+    tenzies!=="won" && setBestTime((prev) => [...prev, Number(timer)]);
     setDice(createRandNumber());
-    setTenzies(false);
-    setTimer(0);
-    tenzies && setTotalRoll(prev => [...prev, Number(roll)] )
+    setTenzies("onGoing");
+    setVisible(1)
+
+    setTimer(60);
+    tenzies!=="onGoing" && setTotalRoll(prev => [...prev, Number(roll)] )
     setRoll(0)
   }
   function toggleMusic(){
     if (!music){
         setMusic(true)
-        sus()
       }
     else{
       setMusic(false)
-      pause()
     }
   }
 
@@ -112,6 +124,7 @@ function Tenzi() {
   }
   const diceElements = dice.map((die) => (
     <Dice
+    className="die-face"
       toggle={() => hold(die.id)}
       value={die.value}
       key={die.id}
@@ -122,31 +135,32 @@ function Tenzi() {
   const bestTimes = bestTime.reverse().map(t =>(
     <li>{t} sec.</li>
   ))
-
+    console.log(tenzies)
 
   const bestRolls = totalRoll.reverse().map(t =>(
     <li>{t} {t>0?"rolls":roll}</li>
   ))
   return (
     <main className="game">
-      {tenzies && <div className="conf-container"><Confetti className="conff"/></div>}
+      {tenzies=="win" && <div className="conf-container"><Confetti className="conff"/></div>}
       <div className="timer-container">
-        <h1 className="timer">{timer}</h1>
+        <h1 className="timer">{timer >0 && timer}</h1>
       </div>
-      {tenzies ? (
-        <h1>Congratulations</h1>
-      ) : (
-        <div className="titless">
-          <h1>Tenzies</h1>
-          <p>
-            Roll until all dice are the same. Click each die to freeze it at its
-            current value between rolls.
-          </p>
-        </div>
-      )}
+      {(tenzies==="win")
+      ?<h1>Congratulations</h1>
+      :(tenzies !=="win" && tenzies ==="lost" )
+      ?<h1>You lost</h1> 
+      :<div className="titless">
+      <h1>Tenzies</h1>
+      <p>
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </p>
+    </div>
+      }
       <div className="dice-container">{diceElements}</div>
-      <button onClick={tenzies ? newGame : rollDice} className="roll">
-        {tenzies ? "New Game" : "Roll Dice!"}
+      <button onClick={(tenzies !=="onGoing") ? newGame : rollDice} className="roll">
+        {(tenzies!=="onGoing") ? "New Game" : "Roll Dice!"}
       </button>
      {/*} <button className="musicToggle" onClick={toggleMusic}>{music ? "Turn Off" : "Turn On"}</button>*/}
       {/*<div className="hallOfFame">
