@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
+import useSound from 'use-sound'
+import win from '../assets/weDidIt.mp3'
+import suspense from '../assets/suspense.mp3'
 
 
 function Dice(props) {
@@ -15,7 +18,10 @@ function Dice(props) {
   );
 }
 function Tenzi() {
-
+  
+  const [sus, {stop, pause}] = useSound(suspense, {volume: 0.09})
+  const [music, setMusic] = useState(false)
+  const [winner] = useSound(suspense, {volume: 0.5})
   const [dice, setDice] = useState(createRandNumber());
   const [tenzies, setTenzies] = useState(false);
   const [timer, setTimer] = useState(0);
@@ -33,6 +39,7 @@ function Tenzi() {
       console.log("You won!");
     }
   }, [dice]);
+
 
   ///Generate new die
   function generateNewDie() {
@@ -54,7 +61,9 @@ function Tenzi() {
        return tenzies ? Number(prev) : Number(prev) + 1
     });
     }, 1000);
-  }, [timer]);
+  }, [timer,]);
+
+
 
  
 
@@ -81,6 +90,16 @@ function Tenzi() {
     setTimer(0);
     tenzies && setTotalRoll(prev => [...prev, Number(roll)] )
     setRoll(0)
+  }
+  function toggleMusic(){
+    if (!music){
+        setMusic(true)
+        sus()
+      }
+    else{
+      setMusic(false)
+      pause()
+    }
   }
 
   function hold(id) {
@@ -129,6 +148,7 @@ function Tenzi() {
       <button onClick={tenzies ? newGame : rollDice} className="roll">
         {tenzies ? "New Game" : "Roll Dice!"}
       </button>
+     {/*} <button className="musicToggle" onClick={toggleMusic}>{music ? "Turn Off" : "Turn On"}</button>*/}
       {/*<div className="hallOfFame">
         <ol>
         <h3>The best Time</h3>

@@ -2,6 +2,7 @@
   text-align: center;
   background-color: rgb(1, 8, 27);
   min-height: max-content;
+  height: 100%;
 }
 
 body{
@@ -15,7 +16,7 @@ body{
   top: 0px;
   left: 0px;
   width: 100%;
-  
+  height: 100%;
 }
 body {
   padding: 0px;
@@ -229,14 +230,14 @@ body {
 /* TENZI */
 
 main {
-  
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: white;
-  text-align: center;
+  text-align: center; 
+  height:100%;
 }
 .dice-container {
   background: white;
@@ -286,7 +287,16 @@ main {
 .roll:hover {
   background: rgb(54, 114, 235);
 }
-
+.musicToggle{
+  all:unset;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid rgb(200,200,200);
+  position: absolute;
+  bottom: 30px;
+  background-color: black;
+  color: white;
+}
 .roll:active {
   background: rgb(79, 131, 235);
 }
@@ -299,7 +309,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
 }
 .timer-container {
   height: 100px;
@@ -324,4 +333,5 @@ main {
 .conff{
   width: 350px;
   margin: auto;
+  height: 100%;
 }
