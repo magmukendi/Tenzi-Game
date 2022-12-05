@@ -1,6 +1,6 @@
 # Tenziga
 
-**[Tenziga](https://magmukendi.me/Tenzi-Game) is a web application of  the Tenzi Game with a timer.
+**[Tenziga]** (https://magmukendi.me/Tenzi-Game) is a web application of  the Tenzi Game with a timer.
 
 
 ![image](https://github.com/243Studio/gif/raw/main/tenzi.gif)
@@ -30,7 +30,7 @@ For local use, clone the project locally, follow the steps below:
 ## Technology & Ressources
 
 - React.js
-- [OAuth2](https://oauth.net/2/).
+- [OAuth2](https://oauth.net/2/)
 - [Socket.io](https://socket.io/)
 
 
