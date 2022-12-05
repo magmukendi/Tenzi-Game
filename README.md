@@ -1,9 +1,11 @@
 # Tenziga
 
-**[Tenziga]** (https://magmukendi.me/Tenzi-Game) is a web application of  the Tenzi Game with a timer.
-
-
 ![image](https://github.com/243Studio/gif/raw/main/tenzi.gif)
+
+**[Tenziga](https://magmukendi.me/Tenzi-Game)** is a web application of  the Tenzi Game with a timer.
+
+
+
 
 
 ## Install & Usage
@@ -39,14 +41,5 @@ For local use, clone the project locally, follow the steps below:
 - Firefox 107.0
 
 ## License
-Quicky Meme is MIT licensed.
-
-
-
-
-How it works:
-
-
-
-Future Iteration:
+Tenziga is MIT licensed.
 
