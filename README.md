@@ -20,7 +20,7 @@ For local use, clone the project locally, follow the steps below:
 ## Features
 
 - [X] Add a timer
-- [X] Add a strat button.
+- [X] Add a start button.
 - [ ] Customize the Timer.
 - [ ] Customize the number of Cards.
 - [ ] Make it Mobile responsive.
