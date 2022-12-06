@@ -2,8 +2,7 @@
 
 ![image](https://github.com/243Studio/gif/raw/main/tenzi.gif)
 
-**[Tenziga](https://magmukendi.me/Tenzi-Game)** is a web application of  the Tenzi Game with a timer.
-
+**[Tenziga](https://magmukendi.me/Tenzi-Game)** is a web application of a fast paced Tenzi Game
 
 
 
